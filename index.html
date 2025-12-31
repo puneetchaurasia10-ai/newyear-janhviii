@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy New Year My Love ❤️</title>
+
+<style>
+body{
+  margin:0;
+  overflow:hidden;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* FIREWORKS */
+canvas{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:0;
+}
+
+/* LIGHTS */
+.lights{
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.25), transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.2), transparent 40%),
+    radial-gradient(circle at 50% 70%, rgba(255,255,255,0.18), transparent 40%);
+  animation: glow 4s ease-in-out infinite alternate;
+  z-index:1;
+  pointer-events:none;
+}
+
+@keyframes glow{
+  from{opacity:0.4;}
+  to{opacity:0.8;}
+}
+
+/* SLIDER */
+.slider{
+  display:flex;
+  width:400vw;
+  height:100vh;
+  transition:1s ease;
+  position:relative;
+  z-index:2;
+}
+
+.slide{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.slide1{background:linear-gradient(135deg,#ff758c,#ff7eb3);}
+.slide2{background:linear-gradient(135deg,#845ec2,#d65db1);}
+.slide3{background:linear-gradient(135deg,#2c73d2,#0081cf);}
+.slide4{background:linear-gradient(135deg,#ff4d6d,#c9184a);}
+
+.card{
+  background:rgba(255,255,255,0.25);
+  backdrop-filter:blur(12px);
+  border-radius:25px;
+  padding:30px;
+  max-width:420px;
+  color:white;
+  text-align:center;
+  animation:fade 1.5s;
+}
+
+@keyframes fade{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1;}
+}
+
+/* TEXT */
+.hny{
+  font-size:2.2rem;
+  white-space:nowrap;
+  margin:0;
+}
+
+.love{
+  font-size:1.6rem;
+  margin-top:10px;
+  font-weight:normal;
+}
+
+p{
+  font-size:1.05rem;
+  line-height:1.6;
+}
+
+img{
+  width:90%;
+  max-width:260px;
+  border-radius:20px;
+  margin:15px 0;
+  animation:zoom 6s infinite alternate;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+@keyframes zoom{
+  from{transform:scale(1);}
+  to{transform:scale(1.08);}
+}
+
+.heart{
+  font-size:2.6rem;
+  animation:beat 1.2s infinite;
+}
+
+@keyframes beat{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+}
+
+button{
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:black;
+  color:white;
+  font-size:1rem;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="fireworks"></canvas>
+<div class="lights"></div>
+
+<div class="slider" id="slider">
+
+<!-- SLIDE 1 -->
+<div class="slide slide1">
+  <div class="card">
+    <div class="hny">Happy New Year</div>
+    <div class="love">My Lovee ❤️</div>
+    <h2>Janhvi Srivastava</h2>
+    <div class="heart">💖</div>
+    <p>A new year begins, but my love for you stays eternal.</p>
+    <button onclick="next()">Next ✨</button>
+  </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide slide2">
+  <div class="card">
+    <img src="file:///storage/emulated/0/Download%202/love1.jpg">
+    <p>
+      This year tested us with many hard days.<br>
+      Even when we were not together,<br>
+      our love was present everywhere.<br><br>
+      I miss you every second of my life.
+    </p>
+    <button onclick="next()">Next 💕</button>
+  </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide slide3">
+  <div class="card">
+    <img src="file:///storage/emulated/0/Download%202/love2.jpg">
+    <p>
+      You are not just a person,<br>
+      you are my world and my life ❤️🌍<br><br>
+      Please stay with me till my last breath ❤️
+    </p>
+    <button onclick="next()">Final ❤️</button>
+  </div>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide slide4">
+  <div class="card">
+    <img src="file:///storage/emulated/0/Download%202/love3.jpg">
+    <div class="heart">❤️</div>
+    <h1>I Love You</h1>
+    <p style="font-size:1.3rem;"><b>143</b></p>
+    <p>Forever yours ♾️</p>
+    <p><b>— Puneett</b></p>
+  </div>
+</div>
+
+</div>
+
+<script>
+let i=0;
+function next(){
+  i++;
+  if(i>3)i=3;
+  slider.style.transform=`translateX(-${i*100}vw)`;
+}
+
+/* FIREWORKS */
+const c=document.getElementById("fireworks");
+const ctx=c.getContext("2d");
+c.width=innerWidth;
+c.height=innerHeight;
+
+setInterval(()=>{
+  ctx.clearRect(0,0,c.width,c.height);
+  for(let i=0;i<30;i++){
+    ctx.beginPath();
+    ctx.arc(Math.random()*c.width,Math.random()*c.height/2,3,0,Math.PI*2);
+    ctx.fillStyle="rgba(255,255,255,0.8)";
+    ctx.fill();
+  }
+},300);
+</script>
+
+</body>
+</html>
