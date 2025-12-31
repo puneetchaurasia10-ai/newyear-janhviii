@@ -88,7 +88,6 @@ canvas{
 .love{
   font-size:1.6rem;
   margin-top:10px;
-  font-weight:normal;
 }
 
 p{
@@ -143,7 +142,7 @@ button{
 <div class="slide slide1">
   <div class="card">
     <div class="hny">Happy New Year</div>
-    <div class="love">My Lovee ❤️</div>
+    <div class="love">My Love ❤️</div>
     <h2>Janhvi Srivastava</h2>
     <div class="heart">💖</div>
     <p>A new year begins, but my love for you stays eternal.</p>
@@ -154,12 +153,11 @@ button{
 <!-- SLIDE 2 -->
 <div class="slide slide2">
   <div class="card">
-    <img src="file:///storage/emulated/0/Download%202/love1.jpg">
+    <img src="love1.jpg">
     <p>
-      This year tested us with many hard days.<br>
-      Even when we were not together,<br>
-      our love was present everywhere.<br><br>
-      I miss you every second of my life.
+      Here the end of 2025 with lots of pyaar,<br>
+      ladai, gussa, breakup & patchup ❤️<br><br>
+      And still together since 9 years 🌍💖
     </p>
     <button onclick="next()">Next 💕</button>
   </div>
@@ -168,11 +166,12 @@ button{
 <!-- SLIDE 3 -->
 <div class="slide slide3">
   <div class="card">
-    <img src="file:///storage/emulated/0/Download%202/love2.jpg">
+    <img src="love2.jpg">
     <p>
-      You are not just a person,<br>
-      you are my world and my life ❤️🌍<br><br>
-      Please stay with me till my last breath ❤️
+      May 2026 be brighter ✨<br>
+      full of happiness 😊<br>
+      success 🏆 and love ❤️<br><br>
+      Till death, always together 💍
     </p>
     <button onclick="next()">Final ❤️</button>
   </div>
@@ -181,30 +180,32 @@ button{
 <!-- SLIDE 4 -->
 <div class="slide slide4">
   <div class="card">
-    <img src="file:///storage/emulated/0/Download%202/love3.jpg">
+    <img src="love3.jpg">
     <div class="heart">❤️</div>
     <h1>I Love You</h1>
     <p style="font-size:1.3rem;"><b>143</b></p>
     <p>Forever yours ♾️</p>
-    <p><b>— Puneett</b></p>
+    <p><b>— Puneet</b></p>
   </div>
 </div>
 
 </div>
 
 <script>
-let i=0;
+let i = 0;
+const slider = document.getElementById("slider");
+
 function next(){
   i++;
-  if(i>3)i=3;
-  slider.style.transform=`translateX(-${i*100}vw)`;
+  if(i > 3) i = 3;
+  slider.style.transform = `translateX(-${i * 100}vw)`;
 }
 
 /* FIREWORKS */
-const c=document.getElementById("fireworks");
-const ctx=c.getContext("2d");
-c.width=innerWidth;
-c.height=innerHeight;
+const c = document.getElementById("fireworks");
+const ctx = c.getContext("2d");
+c.width = innerWidth;
+c.height = innerHeight;
 
 setInterval(()=>{
   ctx.clearRect(0,0,c.width,c.height);
